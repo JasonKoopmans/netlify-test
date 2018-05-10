@@ -3,6 +3,14 @@
 
 <div class="row">
     
+	@foreach( var doc in Documents.FromPipeline("Items")) {
+		@Html.Raw(doc["title"]);
+		@Html.Raw(doc["rating"]);
+		@Html.Raw(doc.Content);
+		<img src='@doc["thumbnail"]'></img>
+		<br/>
+	}
+
       <div id="carousel-example-generic" class="carousel slide col-8" data-ride="carousel">
 		<!-- Indicators -->
 		<ol class="carousel-indicators">
